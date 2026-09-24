@@ -1,1061 +1,2324 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>TotalAV & Total VPN — Security & Privacy Offers</title>
-
-  <meta name="description"
-        content="Compare TotalAV antivirus and Total VPN security offers, features and introductory pricing in one place.">
-
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f4f7fb;
-      color: #172033;
-      line-height: 1.6;
-    }
-
-    a {
-      text-decoration: none;
-    }
-
-    .topbar {
-      background: #101828;
-      color: #fff;
-      text-align: center;
-      padding: 10px 15px;
-      font-size: 13px;
-    }
-
-    .container {
-      width: 92%;
-      max-width: 1180px;
-      margin: auto;
-    }
-
-    header {
-      background: #ffffff;
-      border-bottom: 1px solid #e8edf3;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    .nav {
-      min-height: 72px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    .logo {
-      font-size: 24px;
-      font-weight: 800;
-      color: #111827;
-    }
-
-    .logo span {
-      color: #1769ff;
-    }
-
-    .nav-note {
-      font-size: 13px;
-      color: #667085;
-    }
-
-    .hero {
-      padding: 65px 0 40px;
-      background:
-        radial-gradient(circle at top right, rgba(23,105,255,.12), transparent 35%),
-        linear-gradient(180deg, #ffffff 0%, #f4f7fb 100%);
-    }
-
-    .hero-content {
-      text-align: center;
-      max-width: 850px;
-      margin: auto;
-    }
-
-    .eyebrow {
-      display: inline-block;
-      background: #eaf2ff;
-      color: #155eef;
-      padding: 7px 14px;
-      border-radius: 30px;
-      font-size: 13px;
-      font-weight: 700;
-      margin-bottom: 18px;
-    }
-
-    h1 {
-      font-size: clamp(36px, 6vw, 62px);
-      line-height: 1.05;
-      letter-spacing: -2px;
-      margin-bottom: 20px;
-    }
-
-    .hero p {
-      max-width: 700px;
-      margin: auto;
-      color: #667085;
-      font-size: 18px;
-    }
-
-    .disclosure {
-      margin-top: 20px;
-      font-size: 12px;
-      color: #7a8494;
-    }
-
-    .offers {
-      padding: 35px 0 70px;
-    }
-
-    .offer-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 25px;
-    }
-
-    .offer-card {
-      background: #fff;
-      border-radius: 22px;
-      overflow: hidden;
-      border: 1px solid #e4e9f0;
-      box-shadow: 0 15px 45px rgba(16, 24, 40, .08);
-      position: relative;
-    }
-
-    .offer-card.featured {
-      border: 2px solid #1769ff;
-    }
-
-    .deal-label {
-      position: absolute;
-      top: 18px;
-      right: 18px;
-      background: #e9f9ef;
-      color: #087443;
-      padding: 7px 12px;
-      border-radius: 30px;
-      font-size: 12px;
-      font-weight: 800;
-    }
-
-    .offer-head {
-      padding: 32px 30px 25px;
-    }
-
-    .brand-icon {
-      width: 62px;
-      height: 62px;
-      border-radius: 16px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 25px;
-      font-weight: 900;
-      margin-bottom: 20px;
-    }
-
-    .av-icon {
-      background: #eaf2ff;
-      color: #1769ff;
-    }
-
-    .vpn-icon {
-      background: #e7fbf8;
-      color: #087f73;
-    }
-
-    .offer-head h2 {
-      font-size: 31px;
-      margin-bottom: 8px;
-    }
-
-    .offer-head p {
-      color: #667085;
-      min-height: 50px;
-    }
-
-    .deal-price {
-      margin-top: 25px;
-      display: flex;
-      align-items: flex-end;
-      gap: 8px;
-    }
-
-    .deal-price .price {
-      font-size: 48px;
-      font-weight: 900;
-      line-height: 1;
-    }
-
-    .deal-price .period {
-      color: #667085;
-      font-size: 14px;
-      margin-bottom: 4px;
-    }
-
-    .saving {
-      margin-top: 12px;
-      display: inline-block;
-      background: #fff2e8;
-      color: #c4320a;
-      padding: 7px 12px;
-      border-radius: 8px;
-      font-weight: 800;
-      font-size: 14px;
-    }
-
-    .offer-body {
-      padding: 0 30px 30px;
-    }
-
-    .features {
-      list-style: none;
-      margin: 10px 0 25px;
-    }
-
-    .features li {
-      display: flex;
-      gap: 10px;
-      padding: 9px 0;
-      border-bottom: 1px solid #f0f2f5;
-      font-size: 14px;
-    }
-
-    .check {
-      color: #12b76a;
-      font-weight: 900;
-    }
-
-    .cta {
-      display: block;
-      text-align: center;
-      color: #fff;
-      padding: 15px 20px;
-      border-radius: 11px;
-      font-size: 16px;
-      font-weight: 800;
-      transition: transform .2s ease, opacity .2s ease;
-    }
-
-    .cta:hover {
-      transform: translateY(-2px);
-      opacity: .92;
-    }
-
-    .cta-blue {
-      background: #1769ff;
-    }
-
-    .cta-green {
-      background: #087f73;
-    }
-
-    .renewal {
-      text-align: center;
-      font-size: 11px;
-      color: #7a8494;
-      margin-top: 12px;
-    }
-
-    .section {
-      padding: 75px 0;
-    }
-
-    .section-alt {
-      background: #fff;
-    }
-
-    .section-title {
-      text-align: center;
-      max-width: 750px;
-      margin: 0 auto 45px;
-    }
-
-    .section-title h2 {
-      font-size: 36px;
-      margin-bottom: 12px;
-    }
-
-    .section-title p {
-      color: #667085;
-    }
-
-    .benefit-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-    }
-
-    .benefit {
-      background: #fff;
-      border: 1px solid #e6ebf1;
-      border-radius: 16px;
-      padding: 25px;
-    }
-
-    .section-alt .benefit {
-      background: #f8fafc;
-    }
-
-    .benefit-icon {
-      font-size: 28px;
-      margin-bottom: 15px;
-    }
-
-    .benefit h3 {
-      font-size: 18px;
-      margin-bottom: 7px;
-    }
-
-    .benefit p {
-      font-size: 14px;
-      color: #667085;
-    }
-
-    .reviews {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .review {
-      background: #fff;
-      border: 1px solid #e4e9f0;
-      border-radius: 18px;
-      padding: 25px;
-    }
-
-    .stars {
-      color: #f5a623;
-      letter-spacing: 2px;
-      margin-bottom: 15px;
-    }
-
-    .review p {
-      font-size: 15px;
-      color: #344054;
-      margin-bottom: 18px;
-    }
-
-    .reviewer {
-      font-weight: 800;
-      font-size: 14px;
-    }
-
-    .review-source {
-      font-size: 11px;
-      color: #98a2b3;
-      margin-top: 3px;
-    }
-
-    .faq {
-      max-width: 850px;
-      margin: auto;
-    }
-
-    details {
-      background: #fff;
-      border: 1px solid #e4e9f0;
-      border-radius: 12px;
-      margin-bottom: 12px;
-      padding: 18px 20px;
-    }
-
-    summary {
-      cursor: pointer;
-      font-weight: 800;
-    }
-
-    details p {
-      color: #667085;
-      font-size: 14px;
-      margin-top: 12px;
-    }
-
-    .about {
-      max-width: 850px;
-      margin: auto;
-      background: #fff;
-      border: 1px solid #e4e9f0;
-      border-radius: 18px;
-      padding: 30px;
-    }
-
-    .about p {
-      color: #667085;
-      font-size: 14px;
-      margin-bottom: 12px;
-    }
-
-    footer {
-      background: #101828;
-      color: #fff;
-      padding: 35px 0;
-    }
-
-    .footer-content {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      align-items: center;
-    }
-
-    .footer-content p {
-      color: #98a2b3;
-      font-size: 12px;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 18px;
-    }
-
-    .footer-links a {
-      color: #d0d5dd;
-      font-size: 12px;
-    }
-
-    @media (max-width: 900px) {
-      .offer-grid,
-      .benefit-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .reviews {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 650px) {
-      .container {
-        width: 94%;
-      }
-
-      .nav-note {
-        display: none;
-      }
-
-      .hero {
-        padding: 45px 0 25px;
-      }
-
-      .offer-grid,
-      .benefit-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .offer-head h2 {
-        font-size: 27px;
-      }
-
-      .deal-price .price {
-        font-size: 42px;
-      }
-
-      .section {
-        padding: 55px 0;
-      }
-
-      .section-title h2 {
-        font-size: 29px;
-      }
-
-      .footer-content {
-        flex-direction: column;
-        text-align: center;
-      }
-    }
-  </style>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Security & Privacy Offers</title>
+
+<meta name="description"
+content="Compare antivirus and VPN security options from TotalAV and Total VPN.">
+
+<style>
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f4f7fb;
+  color: #172033;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+}
+
+.topbar {
+  background: #101828;
+  color: #fff;
+  text-align: center;
+  padding: 10px 15px;
+  font-size: 13px;
+}
+
+.container {
+  width: 92%;
+  max-width: 1180px;
+  margin: auto;
+}
+
+header {
+  background: #fff;
+  border-bottom: 1px solid #e8edf3;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav {
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 800;
+  color: #111827;
+}
+
+.logo span {
+  color: #1769ff;
+}
+
+.nav-note {
+  font-size: 13px;
+  color: #667085;
+}
+
+.hero {
+  padding: 65px 0 40px;
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(23,105,255,.12),
+      transparent 35%
+    ),
+    linear-gradient(
+      180deg,
+      #fff 0%,
+      #f4f7fb 100%
+    );
+}
+
+.hero-content {
+  text-align: center;
+  max-width: 850px;
+  margin: auto;
+}
+
+.eyebrow {
+  display: inline-block;
+  background: #eaf2ff;
+  color: #155eef;
+  padding: 7px 14px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+h1 {
+  font-size: clamp(36px, 6vw, 62px);
+  line-height: 1.05;
+  letter-spacing: -2px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  max-width: 700px;
+  margin: auto;
+  color: #667085;
+  font-size: 18px;
+}
+
+.disclosure {
+  margin-top: 20px;
+  font-size: 12px;
+  color: #7a8494;
+}
+
+.offers {
+  padding: 35px 0 70px;
+}
+
+.offer-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+}
+
+.offer-card {
+  background: #fff;
+  border-radius: 22px;
+  overflow: hidden;
+  border: 1px solid #e4e9f0;
+  box-shadow: 0 15px 45px rgba(16,24,40,.08);
+  position: relative;
+}
+
+.offer-card.featured {
+  border: 2px solid #1769ff;
+}
+
+.deal-label {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: #e9f9ef;
+  color: #087443;
+  padding: 7px 12px;
+  border-radius: 30px;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.offer-head {
+  padding: 32px 30px 25px;
+}
+
+.brand-icon {
+  width: 62px;
+  height: 62px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  font-weight: 900;
+  margin-bottom: 20px;
+}
+
+.av-icon {
+  background: #eaf2ff;
+  color: #1769ff;
+}
+
+.vpn-icon {
+  background: #e7fbf8;
+  color: #087f73;
+}
+
+.offer-head h2 {
+  font-size: 31px;
+  margin-bottom: 8px;
+}
+
+.offer-head p {
+  color: #667085;
+  min-height: 50px;
+}
+
+.deal-price {
+  margin-top: 25px;
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.deal-price .price {
+  font-size: 48px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.deal-price .period {
+  color: #667085;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.saving {
+  margin-top: 12px;
+  display: inline-block;
+  background: #fff2e8;
+  color: #c4320a;
+  padding: 7px 12px;
+  border-radius: 8px;
+  font-weight: 800;
+  font-size: 14px;
+}
+
+.offer-body {
+  padding: 0 30px 30px;
+}
+
+.features {
+  list-style: none;
+  margin: 10px 0 25px;
+}
+
+.features li {
+  display: flex;
+  gap: 10px;
+  padding: 9px 0;
+  border-bottom: 1px solid #f0f2f5;
+  font-size: 14px;
+}
+
+.check {
+  color: #12b76a;
+  font-weight: 900;
+}
+
+.cta {
+  display: block;
+  text-align: center;
+  color: #fff;
+  padding: 15px 20px;
+  border-radius: 11px;
+  font-size: 16px;
+  font-weight: 800;
+  transition: transform .2s ease, opacity .2s ease;
+}
+
+.cta:hover {
+  transform: translateY(-2px);
+  opacity: .92;
+}
+
+.cta-blue {
+  background: #1769ff;
+}
+
+.cta-green {
+  background: #087f73;
+}
+
+.renewal {
+  text-align: center;
+  font-size: 11px;
+  color: #7a8494;
+  margin-top: 12px;
+}
+
+.section {
+  padding: 75px 0;
+}
+
+.section-alt {
+  background: #fff;
+}
+
+.section-title {
+  text-align: center;
+  max-width: 750px;
+  margin: 0 auto 45px;
+}
+
+.section-title h2 {
+  font-size: 36px;
+  margin-bottom: 12px;
+}
+
+.section-title p {
+  color: #667085;
+}
+
+.benefit-grid {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 18px;
+}
+
+.benefit {
+  background: #fff;
+  border: 1px solid #e6ebf1;
+  border-radius: 16px;
+  padding: 25px;
+}
+
+.section-alt .benefit {
+  background: #f8fafc;
+}
+
+.benefit-icon {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.benefit h3 {
+  font-size: 18px;
+  margin-bottom: 7px;
+}
+
+.benefit p {
+  font-size: 14px;
+  color: #667085;
+}
+
+.reviews {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 20px;
+}
+
+.review {
+  background: #fff;
+  border: 1px solid #e4e9f0;
+  border-radius: 18px;
+  padding: 25px;
+}
+
+.stars {
+  color: #f5a623;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+}
+
+.review p {
+  font-size: 15px;
+  color: #344054;
+  margin-bottom: 18px;
+}
+
+.reviewer {
+  font-weight: 800;
+  font-size: 14px;
+}
+
+.review-source {
+  font-size: 11px;
+  color: #98a2b3;
+  margin-top: 3px;
+}
+
+.faq {
+  max-width: 850px;
+  margin: auto;
+}
+
+details {
+  background: #fff;
+  border: 1px solid #e4e9f0;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  padding: 18px 20px;
+}
+
+summary {
+  cursor: pointer;
+  font-weight: 800;
+}
+
+details p {
+  color: #667085;
+  font-size: 14px;
+  margin-top: 12px;
+}
+
+.about {
+  max-width: 850px;
+  margin: auto;
+  background: #fff;
+  border: 1px solid #e4e9f0;
+  border-radius: 18px;
+  padding: 30px;
+}
+
+.about p {
+  color: #667085;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+footer {
+  background: #101828;
+  color: #fff;
+  padding: 35px 0;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+}
+
+.footer-content p {
+  color: #98a2b3;
+  font-size: 12px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 18px;
+}
+
+.footer-links a {
+  color: #d0d5dd;
+  font-size: 12px;
+}
+
+@media(max-width:900px) {
+
+  .offer-grid,
+  .benefit-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .reviews {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media(max-width:650px) {
+
+  .container {
+    width: 94%;
+  }
+
+  .nav-note {
+    display: none;
+  }
+
+  .hero {
+    padding: 45px 0 25px;
+  }
+
+  .offer-grid,
+  .benefit-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .offer-head h2 {
+    font-size: 27px;
+  }
+
+  .deal-price .price {
+    font-size: 42px;
+  }
+
+  .section {
+    padding: 55px 0;
+  }
+
+  .section-title h2 {
+    font-size: 29px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+</style>
+
 </head>
+
 
 <body>
 
-  <!-- TOP NOTICE -->
-  <div class="topbar">
-    Independent comparison page · Offer availability and pricing may change
-  </div>
 
-  <!-- HEADER -->
-  <header>
-    <div class="container nav">
-      <div class="logo">
-        Secure<span>Choice</span>
-      </div>
+<!-- TOP BAR -->
 
-      <div class="nav-note">
-        Antivirus & VPN comparison
-      </div>
-    </div>
-  </header>
-
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="container hero-content">
+<div class="topbar" id="topbar">
+  Independent security comparison · Offer availability may vary by region
+</div>
 
-      <span class="eyebrow">
-        DIGITAL SECURITY & PRIVACY
-      </span>
-
-      <h1>
-        Protect Your Digital Life
-      </h1>
-
-      <p>
-        Compare antivirus protection and VPN privacy options from TotalAV
-        and choose the solution that fits your needs.
-      </p>
-
-      <div class="disclosure">
-        We may receive a commission if you purchase through links on this page.
-      </div>
 
-    </div>
-  </section>
+<!-- HEADER -->
 
+<header>
 
-  <!-- OFFERS -->
-  <section class="offers">
-    <div class="container">
+<div class="container nav">
 
-      <div class="offer-grid">
+<div class="logo">
+  Secure<span>Choice</span>
+</div>
 
-        <!-- TOTALAV -->
-        <div class="offer-card featured">
+<div class="nav-note" id="navNote">
+  Antivirus & VPN comparison
+</div>
 
-          <div class="deal-label">
-            SAVE $80
-          </div>
+</div>
 
-          <div class="offer-head">
+</header>
 
-            <div class="brand-icon av-icon">
-              AV
-            </div>
 
-            <h2>
-              TotalAV Antivirus
-            </h2>
-
-            <p>
-              Real-time antivirus protection for your devices,
-              with protection against malware, phishing and other online threats.
-            </p>
-
-            <div class="deal-price">
-              <div class="price">$19</div>
-              <div class="period">
-                first year*
-              </div>
-            </div>
 
-            <span class="saving">
-              Save $80
-            </span>
+<!-- HERO -->
 
-          </div>
+<section class="hero">
 
-          <div class="offer-body">
+<div class="container hero-content">
 
-            <ul class="features">
+<span class="eyebrow" id="eyebrow">
+  DIGITAL SECURITY & PRIVACY
+</span>
 
-              <li>
-                <span class="check">✓</span>
-                Real-time antivirus protection
-              </li>
+<h1 id="heroTitle">
+  Protect Your Digital Life
+</h1>
 
-              <li>
-                <span class="check">✓</span>
-                Malware & ransomware protection
-              </li>
+<p id="heroDescription">
+  Compare antivirus protection and VPN privacy options from
+  TotalAV and choose the solution that fits your needs.
+</p>
 
-              <li>
-                <span class="check">✓</span>
-                Phishing protection
-              </li>
-
-              <li>
-                <span class="check">✓</span>
-                WebShield protection
-              </li>
-
-              <li>
-                <span class="check">✓</span>
-                Windows, Mac, Android & iOS
-              </li>
-
-              <li>
-                <span class="check">✓</span>
-                30-day money-back guarantee
-              </li>
-
-            </ul>
-
-            <a
-              class="cta cta-blue"
-              href="http://url.totalav.com/6ab239967b5d4/click"
-              target="_blank"
-              rel="nofollow sponsored noopener"
-            >
-              View TotalAV Offer →
-            </a>
-
-            <div class="renewal">
-              *Introductory pricing. Subscription automatically renews
-              at the applicable regular rate after the initial term.
-            </div>
-
-          </div>
-        </div>
+<div class="disclosure" id="heroDisclosure">
+  We may receive a commission if you purchase through links on this page.
+</div>
 
+</div>
 
-        <!-- TOTAL VPN -->
-        <div class="offer-card">
+</section>
 
-          <div class="deal-label">
-            SAVE 80%
-          </div>
 
-          <div class="offer-head">
 
-            <div class="brand-icon vpn-icon">
-              VPN
-            </div>
+<!-- OFFERS -->
 
-            <h2>
-              Total VPN
-            </h2>
+<section class="offers">
 
-            <p>
-              VPN privacy and encrypted browsing designed to help
-              protect your online connection.
-            </p>
+<div class="container">
 
-            <div class="deal-price">
-              <div class="price">80%</div>
-              <div class="period">
-                introductory saving
-              </div>
-            </div>
+<div class="offer-grid">
 
-            <span class="saving">
-              Save 80%
-            </span>
 
-          </div>
+<!-- TOTALAV -->
 
-          <div class="offer-body">
+<div class="offer-card featured">
 
-            <ul class="features">
+<div class="deal-label">
+  SAVE $80
+</div>
 
-              <li>
-                <span class="check">✓</span>
-                Encrypted VPN connections
-              </li>
+<div class="offer-head">
 
-              <li>
-                <span class="check">✓</span>
-                Protect your browsing connection
-              </li>
+<div class="brand-icon av-icon">
+  AV
+</div>
 
-              <li>
-                <span class="check">✓</span>
-                Multiple VPN locations
-              </li>
+<h2>
+  TotalAV Antivirus
+</h2>
 
-              <li>
-                <span class="check">✓</span>
-                Privacy-focused browsing
-              </li>
+<p id="avDescription">
+  Real-time antivirus protection for your devices,
+  with protection against malware, phishing and other online threats.
+</p>
 
-              <li>
-                <span class="check">✓</span>
-                Compatible supported devices
-              </li>
+<div class="deal-price">
 
-              <li>
-                <span class="check">✓</span>
-                Refund policy available on eligible plans
-              </li>
+<div class="price">
+  $19
+</div>
 
-            </ul>
+<div class="period" id="avPeriod">
+  first year*
+</div>
 
-            <a
-              class="cta cta-green"
-              href="http://url.totalvpn.com/6ab23bc21752a/click"
-              target="_blank"
-              rel="nofollow sponsored noopener"
-            >
-              View Total VPN Offer →
-            </a>
+</div>
 
-            <div class="renewal">
-              Offer terms, pricing and renewal rates may vary by plan.
-            </div>
+<span class="saving" id="avSaving">
+  Save $80
+</span>
 
-          </div>
-        </div>
+</div>
 
-      </div>
 
-    </div>
-  </section>
+<div class="offer-body">
 
+<ul class="features">
 
-  <!-- WHY SECURITY -->
-  <section class="section section-alt">
+<li>
+<span class="check">✓</span>
+<span id="avFeature1">Real-time antivirus protection</span>
+</li>
 
-    <div class="container">
+<li>
+<span class="check">✓</span>
+<span id="avFeature2">Malware & ransomware protection</span>
+</li>
 
-      <div class="section-title">
+<li>
+<span class="check">✓</span>
+<span id="avFeature3">Phishing protection</span>
+</li>
 
-        <h2>
-          What Should You Protect?
-        </h2>
+<li>
+<span class="check">✓</span>
+<span id="avFeature4">WebShield protection</span>
+</li>
 
-        <p>
-          Antivirus and VPN products solve different security and privacy needs.
-        </p>
+<li>
+<span class="check">✓</span>
+<span id="avFeature5">Windows, Mac, Android & iOS</span>
+</li>
 
-      </div>
+<li>
+<span class="check">✓</span>
+<span id="avFeature6">30-day money-back guarantee</span>
+</li>
 
+</ul>
 
-      <div class="benefit-grid">
 
-        <div class="benefit">
+<a
+class="cta cta-blue"
+href="http://url.totalav.com/6ab239967b5d4/click"
+target="_blank"
+rel="nofollow sponsored noopener"
+id="avButton"
+>
+View TotalAV Offer →
+</a>
 
-          <div class="benefit-icon">🛡️</div>
+<div class="renewal" id="avRenewal">
+  *Introductory pricing. Subscription automatically renews
+  at the applicable regular rate after the initial term.
+</div>
 
-          <h3>
-            Malware Protection
-          </h3>
+</div>
 
-          <p>
-            Antivirus software can scan for and help remove malicious
-            software and other threats.
-          </p>
+</div>
 
-        </div>
 
 
-        <div class="benefit">
+<!-- TOTAL VPN -->
 
-          <div class="benefit-icon">🔐</div>
+<div class="offer-card">
 
-          <h3>
-            Online Privacy
-          </h3>
+<div class="deal-label">
+  SAVE 80%
+</div>
 
-          <p>
-            A VPN can encrypt your connection and provide a different
-            virtual location while browsing.
-          </p>
+<div class="offer-head">
 
-        </div>
+<div class="brand-icon vpn-icon">
+  VPN
+</div>
 
+<h2>
+  Total VPN
+</h2>
 
-        <div class="benefit">
+<p id="vpnDescription">
+  VPN privacy and encrypted browsing designed to help
+  protect your online connection.
+</p>
 
-          <div class="benefit-icon">🌐</div>
+<div class="deal-price">
 
-          <h3>
-            Safer Browsing
-          </h3>
+<div class="price">
+  80%
+</div>
 
-          <p>
-            Security tools can help identify or block certain online
-            threats, phishing attempts and malicious websites.
-          </p>
+<div class="period" id="vpnPeriod">
+  introductory saving
+</div>
 
-        </div>
+</div>
 
+<span class="saving" id="vpnSaving">
+  Save 80%
+</span>
 
-        <div class="benefit">
+</div>
 
-          <div class="benefit-icon">📱</div>
 
-          <h3>
-            Multiple Devices
-          </h3>
+<div class="offer-body">
 
-          <p>
-            TotalAV advertises compatibility across Windows, Mac,
-            Android and iOS devices.
-          </p>
+<ul class="features">
 
-        </div>
+<li>
+<span class="check">✓</span>
+<span id="vpnFeature1">Encrypted VPN connections</span>
+</li>
 
-      </div>
+<li>
+<span class="check">✓</span>
+<span id="vpnFeature2">Protect your browsing connection</span>
+</li>
 
-    </div>
+<li>
+<span class="check">✓</span>
+<span id="vpnFeature3">Multiple VPN locations</span>
+</li>
 
-  </section>
+<li>
+<span class="check">✓</span>
+<span id="vpnFeature4">Privacy-focused browsing</span>
+</li>
 
+<li>
+<span class="check">✓</span>
+<span id="vpnFeature5">Compatible supported devices</span>
+</li>
 
-  <!-- CUSTOMER FEEDBACK -->
-  <section class="section">
+<li>
+<span class="check">✓</span>
+<span id="vpnFeature6">Refund policy available on eligible plans</span>
+</li>
 
-    <div class="container">
+</ul>
 
-      <div class="section-title">
 
-        <h2>
-          Customer Feedback
-        </h2>
+<a
+class="cta cta-green"
+href="http://url.totalvpn.com/6ab23bc21752a/click"
+target="_blank"
+rel="nofollow sponsored noopener"
+id="vpnButton"
+>
+View Total VPN Offer →
+</a>
 
-        <p>
-          Examples of customer comments published on TotalAV's website.
-        </p>
+<div class="renewal" id="vpnRenewal">
+  Offer terms, pricing and renewal rates may vary by plan.
+</div>
 
-      </div>
+</div>
 
+</div>
 
-      <div class="reviews">
 
-        <div class="review">
+</div>
 
-          <div class="stars">
-            ★★★★★
-          </div>
+</div>
 
-          <p>
-            “Most helpful and easy to understand covers PC laptop,
-            cellphones, mac's. I'm pleased.”
-          </p>
+</section>
 
-          <div class="reviewer">
-            Sandra S
-          </div>
 
-          <div class="review-source">
-            Customer comment published by TotalAV
-          </div>
 
-        </div>
+<!-- BENEFITS -->
 
+<section class="section section-alt">
 
-        <div class="review">
+<div class="container">
 
-          <div class="stars">
-            ★★★★★
-          </div>
+<div class="section-title">
 
-          <p>
-            “This is an affordable and great antivirus package.”
-          </p>
+<h2 id="benefitTitle">
+  What Should You Protect?
+</h2>
 
-          <div class="reviewer">
-            Tim
-          </div>
+<p id="benefitDescription">
+  Antivirus and VPN products solve different security and privacy needs.
+</p>
 
-          <div class="review-source">
-            Customer comment published by TotalAV
-          </div>
+</div>
 
-        </div>
 
+<div class="benefit-grid">
 
-        <div class="review">
 
-          <div class="stars">
-            ★★★★★
-          </div>
+<div class="benefit">
 
-          <p>
-            “Affordable. Reliable. Easy to use.”
-          </p>
+<div class="benefit-icon">
+  🛡️
+</div>
 
-          <div class="reviewer">
-            Kelly M
-          </div>
+<h3 id="benefit1Title">
+  Malware Protection
+</h3>
 
-          <div class="review-source">
-            Customer comment published by TotalAV
-          </div>
+<p id="benefit1Text">
+  Antivirus software can scan for and help remove malicious
+  software and other threats.
+</p>
 
-        </div>
+</div>
 
-      </div>
 
-    </div>
+<div class="benefit">
 
-  </section>
+<div class="benefit-icon">
+  🔐
+</div>
 
+<h3 id="benefit2Title">
+  Online Privacy
+</h3>
 
-  <!-- FAQ -->
-  <section class="section section-alt">
+<p id="benefit2Text">
+  A VPN can encrypt your connection and provide a different
+  virtual location while browsing.
+</p>
 
-    <div class="container">
+</div>
 
-      <div class="section-title">
 
-        <h2>
-          Frequently Asked Questions
-        </h2>
+<div class="benefit">
 
-      </div>
+<div class="benefit-icon">
+  🌐
+</div>
 
+<h3 id="benefit3Title">
+  Safer Browsing
+</h3>
 
-      <div class="faq">
+<p id="benefit3Text">
+  Security tools can help identify or block certain online
+  threats, phishing attempts and malicious websites.
+</p>
 
-        <details>
-          <summary>
-            What is the difference between antivirus and a VPN?
-          </summary>
+</div>
 
-          <p>
-            Antivirus software is primarily designed to detect and protect
-            against malware and other malicious threats. A VPN focuses on
-            encrypting your internet connection and providing privacy while
-            browsing.
-          </p>
 
-        </details>
+<div class="benefit">
 
+<div class="benefit-icon">
+  📱
+</div>
 
-        <details>
-          <summary>
-            Is TotalAV available on mobile devices?
-          </summary>
+<h3 id="benefit4Title">
+  Multiple Devices
+</h3>
 
-          <p>
-            TotalAV currently advertises support for Windows, Mac, Android
-            and iOS devices.
-          </p>
+<p id="benefit4Text">
+  TotalAV advertises compatibility across Windows, Mac,
+  Android and iOS devices.
+</p>
 
-        </details>
+</div>
 
 
-        <details>
-          <summary>
-            Is the $80 TotalAV discount permanent?
-          </summary>
+</div>
 
-          <p>
-            Promotional pricing can change. The TotalAV offer page currently
-            advertises an $80 saving for the introductory term, so always
-            check the provider's offer page before purchasing.
-          </p>
+</div>
 
-        </details>
+</section>
 
 
-        <details>
-          <summary>
-            Does the subscription renew automatically?
-          </summary>
 
-          <p>
-            TotalAV states that promotional subscriptions automatically renew
-            at the applicable regular rate after the introductory term.
-            Review the current billing terms before completing a purchase.
-          </p>
+<!-- CUSTOMER FEEDBACK -->
 
-        </details>
+<section class="section">
 
+<div class="container">
 
-        <details>
-          <summary>
-            Do I purchase directly from this website?
-          </summary>
+<div class="section-title">
 
-          <p>
-            No. This page provides information and links to the provider's
-            offer pages. Clicking an offer button takes you to the relevant
-            TotalAV or Total VPN destination.
-          </p>
+<h2 id="reviewTitle">
+  Customer Feedback
+</h2>
 
-        </details>
+<p id="reviewDescription">
+  Examples of customer comments published on TotalAV's website.
+</p>
 
-      </div>
+</div>
 
-    </div>
 
-  </section>
+<div class="reviews">
 
 
-  <!-- ABOUT / DISCLOSURE -->
-  <section class="section">
+<div class="review">
 
-    <div class="container">
+<div class="stars">
+  ★★★★★
+</div>
 
-      <div class="about">
+<p>
+  “Most helpful and easy to understand covers PC laptop,
+  cellphones, mac's. I'm pleased.”
+</p>
 
-        <h2>
-          About This Page
-        </h2>
+<div class="reviewer">
+  Sandra S
+</div>
 
-        <br>
+<div class="review-source" id="reviewSource1">
+  Customer comment published by TotalAV
+</div>
 
-        <p>
-          This website is an independent informational and comparison page.
-          It is not the official TotalAV or Total VPN website.
-        </p>
+</div>
 
-        <p>
-          Some links on this page are affiliate links. If you purchase a
-          product after clicking one of these links, the website operator
-          may receive a commission at no additional cost to you.
-        </p>
 
-        <p>
-          Prices, discounts, features, availability, renewal rates and
-          refund terms can change. Please verify the final terms on the
-          provider's website before purchasing.
-        </p>
+<div class="review">
 
-        <p>
-          Offer information on this page was checked in September 2026.
-        </p>
+<div class="stars">
+  ★★★★★
+</div>
 
-      </div>
+<p>
+  “This is an affordable and great antivirus package.”
+</p>
 
-    </div>
+<div class="reviewer">
+  Tim
+</div>
 
-  </section>
+<div class="review-source" id="reviewSource2">
+  Customer comment published by TotalAV
+</div>
 
+</div>
 
-  <!-- FOOTER -->
-  <footer>
 
-    <div class="container footer-content">
+<div class="review">
 
-      <p>
-        © 2026 SecureChoice. Independent informational website.
-      </p>
+<div class="stars">
+  ★★★★★
+</div>
 
-      <div class="footer-links">
+<p>
+  “Affordable. Reliable. Easy to use.”
+</p>
 
-        <a href="privacy.html">
-          Privacy Policy
-        </a>
+<div class="reviewer">
+  Kelly M
+</div>
 
-        <a href="terms.html">
-          Terms
-        </a>
+<div class="review-source" id="reviewSource3">
+  Customer comment published by TotalAV
+</div>
 
-        <a href="contact.html">
-          Contact
-        </a>
+</div>
 
-      </div>
 
-    </div>
+</div>
 
-  </footer>
+</div>
+
+</section>
+
+
+
+<!-- FAQ -->
+
+<section class="section section-alt">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2 id="faqTitle">
+  Frequently Asked Questions
+</h2>
+
+</div>
+
+
+<div class="faq">
+
+
+<details>
+
+<summary id="faq1Question">
+  What is the difference between antivirus and a VPN?
+</summary>
+
+<p id="faq1Answer">
+  Antivirus software is primarily designed to detect and protect
+  against malware and other malicious threats. A VPN focuses on
+  encrypting your internet connection and providing privacy while browsing.
+</p>
+
+</details>
+
+
+<details>
+
+<summary id="faq2Question">
+  Is TotalAV available on mobile devices?
+</summary>
+
+<p id="faq2Answer">
+  TotalAV currently advertises support for Windows, Mac, Android
+  and iOS devices.
+</p>
+
+</details>
+
+
+<details>
+
+<summary id="faq3Question">
+  Is the $80 TotalAV discount permanent?
+</summary>
+
+<p id="faq3Answer">
+  Promotional pricing can change. Check the provider's offer page
+  before purchasing.
+</p>
+
+</details>
+
+
+<details>
+
+<summary id="faq4Question">
+  Does the subscription renew automatically?
+</summary>
+
+<p id="faq4Answer">
+  Promotional subscriptions can automatically renew at the applicable
+  regular rate after the introductory term. Review the current billing
+  terms before completing a purchase.
+</p>
+
+</details>
+
+
+<details>
+
+<summary id="faq5Question">
+  Do I purchase directly from this website?
+</summary>
+
+<p id="faq5Answer">
+  No. This page provides information and links to the provider's
+  offer pages.
+</p>
+
+</details>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ABOUT -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="about">
+
+<h2 id="aboutTitle">
+  About This Page
+</h2>
+
+<br>
+
+<p id="about1">
+  This website is an independent informational and comparison page.
+  It is not the official TotalAV or Total VPN website.
+</p>
+
+<p id="about2">
+  Some links on this page are affiliate links. If you purchase a
+  product after clicking one of these links, the website operator
+  may receive a commission at no additional cost to you.
+</p>
+
+<p id="about3">
+  Prices, discounts, features, availability, renewal rates and
+  refund terms can change. Please verify the final terms on the
+  provider's website before purchasing.
+</p>
+
+<p id="about4">
+  Offer information was checked in September 2026.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="container footer-content">
+
+<p id="copyright">
+  © 2026 SecureChoice. Independent informational website.
+</p>
+
+<div class="footer-links">
+
+<a href="privacy.html">
+  Privacy Policy
+</a>
+
+<a href="terms.html">
+  Terms
+</a>
+
+<a href="contact.html">
+  Contact
+</a>
+
+</div>
+
+</div>
+
+</footer>
+
+
+
+<script>
+
+/*
+====================================================
+GEO / LANGUAGE LOCALIZATION
+====================================================
+
+Uses the visitor's browser language.
+
+No external IP-location service is used.
+If the browser language isn't supported,
+English is used as the fallback.
+*/
+
+const translations = {
+
+  en: {
+
+    topbar:
+      "Independent security comparison · Offer availability may vary by region",
+
+    nav:
+      "Antivirus & VPN comparison",
+
+    eyebrow:
+      "DIGITAL SECURITY & PRIVACY",
+
+    heroTitle:
+      "Protect Your Digital Life",
+
+    heroDescription:
+      "Compare antivirus protection and VPN privacy options from TotalAV and choose the solution that fits your needs.",
+
+    disclosure:
+      "We may receive a commission if you purchase through links on this page.",
+
+    avDescription:
+      "Real-time antivirus protection for your devices, with protection against malware, phishing and other online threats.",
+
+    avPeriod:
+      "first year*",
+
+    avSaving:
+      "Save $80",
+
+    avFeature1:
+      "Real-time antivirus protection",
+
+    avFeature2:
+      "Malware & ransomware protection",
+
+    avFeature3:
+      "Phishing protection",
+
+    avFeature4:
+      "WebShield protection",
+
+    avFeature5:
+      "Windows, Mac, Android & iOS",
+
+    avFeature6:
+      "30-day money-back guarantee",
+
+    avButton:
+      "View TotalAV Offer →",
+
+    avRenewal:
+      "*Introductory pricing. Subscription automatically renews at the applicable regular rate after the initial term.",
+
+    vpnDescription:
+      "VPN privacy and encrypted browsing designed to help protect your online connection.",
+
+    vpnPeriod:
+      "introductory saving",
+
+    vpnSaving:
+      "Save 80%",
+
+    vpnFeature1:
+      "Encrypted VPN connections",
+
+    vpnFeature2:
+      "Protect your browsing connection",
+
+    vpnFeature3:
+      "Multiple VPN locations",
+
+    vpnFeature4:
+      "Privacy-focused browsing",
+
+    vpnFeature5:
+      "Compatible supported devices",
+
+    vpnFeature6:
+      "Refund policy available on eligible plans",
+
+    vpnButton:
+      "View Total VPN Offer →",
+
+    vpnRenewal:
+      "Offer terms, pricing and renewal rates may vary by plan.",
+
+    benefitTitle:
+      "What Should You Protect?",
+
+    benefitDescription:
+      "Antivirus and VPN products solve different security and privacy needs.",
+
+    benefit1Title:
+      "Malware Protection",
+
+    benefit1Text:
+      "Antivirus software can scan for and help remove malicious software and other threats.",
+
+    benefit2Title:
+      "Online Privacy",
+
+    benefit2Text:
+      "A VPN can encrypt your connection and provide a different virtual location while browsing.",
+
+    benefit3Title:
+      "Safer Browsing",
+
+    benefit3Text:
+      "Security tools can help identify or block certain online threats, phishing attempts and malicious websites.",
+
+    benefit4Title:
+      "Multiple Devices",
+
+    benefit4Text:
+      "TotalAV advertises compatibility across Windows, Mac, Android and iOS devices.",
+
+    reviewTitle:
+      "Customer Feedback",
+
+    reviewDescription:
+      "Examples of customer comments published on TotalAV's website.",
+
+    reviewSource:
+      "Customer comment published by TotalAV",
+
+    faqTitle:
+      "Frequently Asked Questions",
+
+    faq1Question:
+      "What is the difference between antivirus and a VPN?",
+
+    faq1Answer:
+      "Antivirus software is primarily designed to detect and protect against malware and other malicious threats. A VPN focuses on encrypting your internet connection and providing privacy while browsing.",
+
+    faq2Question:
+      "Is TotalAV available on mobile devices?",
+
+    faq2Answer:
+      "TotalAV currently advertises support for Windows, Mac, Android and iOS devices.",
+
+    faq3Question:
+      "Is the $80 TotalAV discount permanent?",
+
+    faq3Answer:
+      "Promotional pricing can change. Check the provider's offer page before purchasing.",
+
+    faq4Question:
+      "Does the subscription renew automatically?",
+
+    faq4Answer:
+      "Promotional subscriptions can automatically renew at the applicable regular rate after the introductory term. Review the current billing terms before completing a purchase.",
+
+    faq5Question:
+      "Do I purchase directly from this website?",
+
+    faq5Answer:
+      "No. This page provides information and links to the provider's offer pages.",
+
+    aboutTitle:
+      "About This Page",
+
+    about1:
+      "This website is an independent informational and comparison page. It is not the official TotalAV or Total VPN website.",
+
+    about2:
+      "Some links on this page are affiliate links. If you purchase a product after clicking one of these links, the website operator may receive a commission at no additional cost to you.",
+
+    about3:
+      "Prices, discounts, features, availability, renewal rates and refund terms can change. Please verify the final terms on the provider's website before purchasing.",
+
+    about4:
+      "Offer information was checked in September 2026."
+
+  },
+
+
+  de: {
+
+    topbar:
+      "Unabhängige Sicherheitsübersicht · Angebote und Verfügbarkeit können je nach Region variieren",
+
+    nav:
+      "Antivirus- & VPN-Vergleich",
+
+    eyebrow:
+      "DIGITALE SICHERHEIT & PRIVATSPHÄRE",
+
+    heroTitle:
+      "Schützen Sie Ihr digitales Leben",
+
+    heroDescription:
+      "Vergleichen Sie Antivirus-Schutz und VPN-Privatsphäre von TotalAV und wählen Sie die passende Lösung für Ihre Bedürfnisse.",
+
+    disclosure:
+      "Wir können eine Provision erhalten, wenn Sie über einen Link auf dieser Seite kaufen.",
+
+    avDescription:
+      "Echtzeit-Antivirusschutz für Ihre Geräte gegen Malware, Phishing und andere Online-Bedrohungen.",
+
+    avPeriod:
+      "erstes Jahr*",
+
+    avSaving:
+      "80 $ sparen",
+
+    avButton:
+      "TotalAV-Angebot ansehen →",
+
+    vpnDescription:
+      "VPN-Privatsphäre und verschlüsseltes Surfen zum Schutz Ihrer Internetverbindung.",
+
+    vpnPeriod:
+      "Einführungsangebot",
+
+    vpnSaving:
+      "80 % sparen",
+
+    vpnButton:
+      "Total VPN-Angebot ansehen →",
+
+    benefitTitle:
+      "Was möchten Sie schützen?",
+
+    benefitDescription:
+      "Antivirus und VPN erfüllen unterschiedliche Sicherheits- und Datenschutzanforderungen.",
+
+    benefit1Title:
+      "Schutz vor Malware",
+
+    benefit1Text:
+      "Antivirensoftware kann schädliche Software und andere Bedrohungen erkennen und entfernen helfen.",
+
+    benefit2Title:
+      "Online-Privatsphäre",
+
+    benefit2Text:
+      "Ein VPN kann Ihre Verbindung verschlüsseln und beim Surfen einen anderen virtuellen Standort bereitstellen.",
+
+    benefit3Title:
+      "Sichereres Surfen",
+
+    benefit3Text:
+      "Sicherheitstools können dabei helfen, bestimmte Online-Bedrohungen und Phishing-Versuche zu erkennen oder zu blockieren.",
+
+    benefit4Title:
+      "Mehrere Geräte",
+
+    benefit4Text:
+      "TotalAV unterstützt moderne Windows-, Mac-, Android- und iOS-Geräte.",
+
+    reviewTitle:
+      "Kundenfeedback",
+
+    reviewDescription:
+      "Beispiele für Kundenkommentare, die auf der TotalAV-Website veröffentlicht wurden.",
+
+    faqTitle:
+      "Häufig gestellte Fragen",
+
+    faq1Question:
+      "Was ist der Unterschied zwischen Antivirus und VPN?",
+
+    faq1Answer:
+      "Antivirensoftware schützt hauptsächlich vor Malware und anderen schädlichen Bedrohungen. Ein VPN konzentriert sich auf die Verschlüsselung Ihrer Internetverbindung und den Datenschutz beim Surfen.",
+
+    faq2Question:
+      "Ist TotalAV auf Mobilgeräten verfügbar?",
+
+    faq2Answer:
+      "TotalAV bietet Unterstützung für Windows, Mac, Android und iOS.",
+
+    faq3Question:
+      "Ist der TotalAV-Rabatt von 80 $ dauerhaft?",
+
+    faq3Answer:
+      "Aktionspreise können sich ändern. Prüfen Sie vor dem Kauf die aktuelle Angebotsseite des Anbieters.",
+
+    faq4Question:
+      "Verlängert sich das Abonnement automatisch?",
+
+    faq4Answer:
+      "Aktionsabonnements können nach der Einführungsphase zum jeweils gültigen regulären Preis automatisch verlängert werden.",
+
+    faq5Question:
+      "Kaufe ich direkt auf dieser Website?",
+
+    faq5Answer:
+      "Nein. Diese Seite stellt Informationen bereit und verlinkt auf die Angebotsseiten des Anbieters.",
+
+    aboutTitle:
+      "Über diese Seite",
+
+    about1:
+      "Diese Website ist eine unabhängige Informations- und Vergleichsseite. Sie ist nicht die offizielle Website von TotalAV oder Total VPN.",
+
+    about2:
+      "Einige Links auf dieser Seite sind Affiliate-Links. Wenn Sie nach dem Klick auf einen solchen Link ein Produkt kaufen, kann der Betreiber eine Provision erhalten.",
+
+    about3:
+      "Preise, Rabatte, Funktionen, Verfügbarkeit und Rückerstattungsbedingungen können sich ändern. Prüfen Sie vor dem Kauf die aktuellen Bedingungen des Anbieters.",
+
+    about4:
+      "Angebotsinformationen wurden im September 2026 geprüft."
+
+  },
+
+
+  fr: {
+
+    topbar:
+      "Comparaison indépendante · Les offres et la disponibilité peuvent varier selon la région",
+
+    nav:
+      "Comparatif antivirus & VPN",
+
+    eyebrow:
+      "SÉCURITÉ NUMÉRIQUE & CONFIDENTIALITÉ",
+
+    heroTitle:
+      "Protégez votre vie numérique",
+
+    heroDescription:
+      "Comparez les solutions antivirus et VPN de TotalAV et choisissez celle qui correspond à vos besoins.",
+
+    disclosure:
+      "Nous pouvons recevoir une commission si vous effectuez un achat via un lien présent sur cette page.",
+
+    avDescription:
+      "Protection antivirus en temps réel pour vos appareils contre les logiciels malveillants, le phishing et autres menaces en ligne.",
+
+    avPeriod:
+      "première année*",
+
+    avSaving:
+      "Économisez 80 $",
+
+    avButton:
+      "Voir l'offre TotalAV →",
+
+    vpnDescription:
+      "Confidentialité VPN et navigation chiffrée pour contribuer à protéger votre connexion Internet.",
+
+    vpnPeriod:
+      "offre de lancement",
+
+    vpnSaving:
+      "Économisez 80 %",
+
+    vpnButton:
+      "Voir l'offre Total VPN →",
+
+    benefitTitle:
+      "Que souhaitez-vous protéger ?",
+
+    benefitDescription:
+      "Les antivirus et les VPN répondent à des besoins différents en matière de sécurité et de confidentialité.",
+
+    benefit1Title:
+      "Protection contre les logiciels malveillants",
+
+    benefit1Text:
+      "Un antivirus peut détecter et contribuer à supprimer les logiciels malveillants et autres menaces.",
+
+    benefit2Title:
+      "Confidentialité en ligne",
+
+    benefit2Text:
+      "Un VPN peut chiffrer votre connexion et fournir un emplacement virtuel différent pendant votre navigation.",
+
+    benefit3Title:
+      "Navigation plus sûre",
+
+    benefit3Text:
+      "Les outils de sécurité peuvent aider à identifier ou bloquer certaines menaces en ligne et tentatives de phishing.",
+
+    benefit4Title:
+      "Plusieurs appareils",
+
+    benefit4Text:
+      "TotalAV prend en charge les appareils Windows, Mac, Android et iOS.",
+
+    reviewTitle:
+      "Avis de clients",
+
+    reviewDescription:
+      "Exemples de commentaires publiés sur le site de TotalAV.",
+
+    faqTitle:
+      "Questions fréquentes",
+
+    faq1Question:
+      "Quelle est la différence entre un antivirus et un VPN?",
+
+    faq1Answer:
+      "Un antivirus protège principalement contre les logiciels malveillants et autres menaces. Un VPN se concentre sur le chiffrement de votre connexion Internet et la confidentialité.",
+
+    faq2Question:
+      "TotalAV est-il disponible sur mobile?",
+
+    faq2Answer:
+      "TotalAV prend actuellement en charge Windows, Mac, Android et iOS.",
+
+    faq3Question:
+      "La remise de 80 $ de TotalAV est-elle permanente?",
+
+    faq3Answer:
+      "Les prix promotionnels peuvent changer. Vérifiez l'offre actuelle du fournisseur avant tout achat.",
+
+    faq4Question:
+      "L'abonnement se renouvelle-t-il automatiquement?",
+
+    faq4Answer:
+      "Les abonnements promotionnels peuvent être renouvelés automatiquement au tarif régulier applicable après la période initiale.",
+
+    faq5Question:
+      "Est-ce que j'achète directement sur ce site?",
+
+    faq5Answer:
+      "Non. Cette page fournit des informations et des liens vers les pages d'offres du fournisseur.",
+
+    aboutTitle:
+      "À propos de cette page",
+
+    about1:
+      "Ce site est une page indépendante d'information et de comparaison. Il ne s'agit pas du site officiel de TotalAV ou Total VPN.",
+
+    about2:
+      "Certains liens présents sur cette page sont des liens affiliés. Le propriétaire du site peut recevoir une commission si vous effectuez un achat après avoir utilisé ces liens.",
+
+    about3:
+      "Les prix, remises, fonctionnalités et conditions peuvent changer. Vérifiez les conditions finales auprès du fournisseur avant d'acheter.",
+
+    about4:
+      "Les informations sur les offres ont été vérifiées en septembre 2026."
+
+  },
+
+
+  es: {
+
+    topbar:
+      "Comparación independiente · Las ofertas y disponibilidad pueden variar según la región",
+
+    nav:
+      "Comparativa de antivirus y VPN",
+
+    eyebrow:
+      "SEGURIDAD DIGITAL Y PRIVACIDAD",
+
+    heroTitle:
+      "Protege tu vida digital",
+
+    heroDescription:
+      "Compara las opciones de antivirus y VPN de TotalAV y elige la solución que mejor se adapte a tus necesidades.",
+
+    disclosure:
+      "Podemos recibir una comisión si realizas una compra a través de un enlace de esta página.",
+
+    avDescription:
+      "Protección antivirus en tiempo real para tus dispositivos contra malware, phishing y otras amenazas online.",
+
+    avPeriod:
+      "primer año*",
+
+    avSaving:
+      "Ahorra $80",
+
+    avButton:
+      "Ver oferta de TotalAV →",
+
+    vpnDescription:
+      "Privacidad VPN y navegación cifrada para ayudar a proteger tu conexión a Internet.",
+
+    vpnPeriod:
+      "oferta introductoria",
+
+    vpnSaving:
+      "Ahorra 80%",
+
+    vpnButton:
+      "Ver oferta de Total VPN →",
+
+    benefitTitle:
+      "¿Qué quieres proteger?",
+
+    benefitDescription:
+      "Los antivirus y las VPN ofrecen diferentes tipos de protección y privacidad.",
+
+    benefit1Title:
+      "Protección contra malware",
+
+    benefit1Text:
+      "El software antivirus puede detectar y ayudar a eliminar malware y otras amenazas.",
+
+    benefit2Title:
+      "Privacidad online",
+
+    benefit2Text:
+      "Una VPN puede cifrar tu conexión y proporcionar una ubicación virtual diferente mientras navegas.",
+
+    benefit3Title:
+      "Navegación más segura",
+
+    benefit3Text:
+      "Las herramientas de seguridad pueden ayudar a identificar o bloquear determinadas amenazas y ataques de phishing.",
+
+    benefit4Title:
+      "Varios dispositivos",
+
+    benefit4Text:
+      "TotalAV ofrece compatibilidad con dispositivos Windows, Mac, Android e iOS.",
+
+    reviewTitle:
+      "Opiniones de clientes",
+
+    reviewDescription:
+      "Ejemplos de comentarios publicados en el sitio web de TotalAV.",
+
+    faqTitle:
+      "Preguntas frecuentes",
+
+    faq1Question:
+      "¿Cuál es la diferencia entre un antivirus y una VPN?",
+
+    faq1Answer:
+      "El antivirus está diseñado principalmente para detectar y proteger contra malware y otras amenazas. Una VPN se centra en cifrar tu conexión a Internet y proporcionar privacidad.",
+
+    faq2Question:
+      "¿TotalAV está disponible en dispositivos móviles?",
+
+    faq2Answer:
+      "TotalAV ofrece compatibilidad con Windows, Mac, Android e iOS.",
+
+    faq3Question:
+      "¿El descuento de $80 de TotalAV es permanente?",
+
+    faq3Answer:
+      "Los precios promocionales pueden cambiar. Comprueba la oferta actual antes de realizar una compra.",
+
+    faq4Question:
+      "¿La suscripción se renueva automáticamente?",
+
+    faq4Answer:
+      "Las suscripciones promocionales pueden renovarse automáticamente al precio habitual aplicable después del período inicial.",
+
+    faq5Question:
+      "¿Compro directamente desde este sitio?",
+
+    faq5Answer:
+      "No. Esta página proporciona información y enlaces a las páginas de ofertas del proveedor.",
+
+    aboutTitle:
+      "Sobre esta página",
+
+    about1:
+      "Este sitio web es una página independiente de información y comparación. No es el sitio web oficial de TotalAV ni de Total VPN.",
+
+    about2:
+      "Algunos enlaces de esta página son enlaces de afiliados. El operador puede recibir una comisión si realizas una compra después de utilizar uno de estos enlaces.",
+
+    about3:
+      "Los precios, descuentos, características y condiciones pueden cambiar. Comprueba las condiciones finales con el proveedor antes de comprar.",
+
+    about4:
+      "La información de las ofertas se comprobó en septiembre de 2026."
+
+  },
+
+
+  it: {
+
+    topbar:
+      "Confronto indipendente · Offerte e disponibilità possono variare in base alla regione",
+
+    nav:
+      "Confronto antivirus e VPN",
+
+    eyebrow:
+      "SICUREZZA DIGITALE E PRIVACY",
+
+    heroTitle:
+      "Proteggi la tua vita digitale",
+
+    heroDescription:
+      "Confronta le soluzioni antivirus e VPN di TotalAV e scegli quella più adatta alle tue esigenze.",
+
+    disclosure:
+      "Potremmo ricevere una commissione se effettui un acquisto tramite un link presente su questa pagina.",
+
+    avDescription:
+      "Protezione antivirus in tempo reale per i tuoi dispositivi contro malware, phishing e altre minacce online.",
+
+    avPeriod:
+      "primo anno*",
+
+    avSaving:
+      "Risparmia $80",
+
+    avButton:
+      "Vedi offerta TotalAV →",
+
+    vpnDescription:
+      "Privacy VPN e navigazione crittografata per contribuire a proteggere la tua connessione Internet.",
+
+    vpnPeriod:
+      "offerta introduttiva",
+
+    vpnSaving:
+      "Risparmia 80%",
+
+    vpnButton:
+      "Vedi offerta Total VPN →",
+
+    benefitTitle:
+      "Cosa vuoi proteggere?",
+
+    benefitDescription:
+      "Antivirus e VPN rispondono a esigenze diverse di sicurezza e privacy.",
+
+    benefit1Title:
+      "Protezione dal malware",
+
+    benefit1Text:
+      "Il software antivirus può rilevare e aiutare a rimuovere malware e altre minacce.",
+
+    benefit2Title:
+      "Privacy online",
+
+    benefit2Text:
+      "Una VPN può crittografare la connessione e fornire una posizione virtuale diversa durante la navigazione.",
+
+    benefit3Title:
+      "Navigazione più sicura",
+
+    benefit3Text:
+      "Gli strumenti di sicurezza possono aiutare a identificare o bloccare alcune minacce online e tentativi di phishing.",
+
+    benefit4Title:
+      "Più dispositivi",
+
+    benefit4Text:
+      "TotalAV è compatibile con dispositivi Windows, Mac, Android e iOS.",
+
+    reviewTitle:
+      "Feedback dei clienti",
+
+    reviewDescription:
+      "Esempi di commenti pubblicati sul sito di TotalAV.",
+
+    faqTitle:
+      "Domande frequenti",
+
+    faq1Question:
+      "Qual è la differenza tra antivirus e VPN?",
+
+    faq1Answer:
+      "L'antivirus è progettato principalmente per rilevare e proteggere dai malware e da altre minacce. Una VPN si concentra sulla crittografia della connessione Internet e sulla privacy.",
+
+    faq2Question:
+      "TotalAV è disponibile sui dispositivi mobili?",
+
+    faq2Answer:
+      "TotalAV supporta Windows, Mac, Android e iOS.",
+
+    faq3Question:
+      "Lo sconto di $80 di TotalAV è permanente?",
+
+    faq3Answer:
+      "I prezzi promozionali possono cambiare. Controlla l'offerta attuale prima dell'acquisto.",
+
+    faq4Question:
+      "L'abbonamento si rinnova automaticamente?",
+
+    faq4Answer:
+      "Gli abbonamenti promozionali possono rinnovarsi automaticamente alla tariffa normale applicabile dopo il periodo iniziale.",
+
+    faq5Question:
+      "Acquisto direttamente da questo sito?",
+
+    faq5Answer:
+      "No. Questa pagina fornisce informazioni e collegamenti alle pagine delle offerte del fornitore.",
+
+    aboutTitle:
+      "Informazioni sulla pagina",
+
+    about1:
+      "Questo sito è una pagina indipendente di informazioni e confronto. Non è il sito ufficiale di TotalAV o Total VPN.",
+
+    about2:
+      "Alcuni link presenti in questa pagina sono link affiliati. Il gestore del sito potrebbe ricevere una commissione se effettui un acquisto tramite questi link.",
+
+    about3:
+      "Prezzi, sconti, funzionalità e condizioni possono cambiare. Verifica le condizioni finali sul sito del fornitore prima dell'acquisto.",
+
+    about4:
+      "Le informazioni sulle offerte sono state verificate a settembre 2026."
+
+  },
+
+
+  nl: {
+
+    topbar:
+      "Onafhankelijke beveiligingsvergelijking · Aanbiedingen en beschikbaarheid kunnen per regio verschillen",
+
+    nav:
+      "Antivirus- & VPN-vergelijking",
+
+    eyebrow:
+      "DIGITALE BEVEILIGING & PRIVACY",
+
+    heroTitle:
+      "Bescherm je digitale leven",
+
+    heroDescription:
+      "Vergelijk antivirus- en VPN-oplossingen van TotalAV en kies de oplossing die bij je past.",
+
+    disclosure:
+      "We kunnen een commissie ontvangen wanneer je via een link op deze pagina een aankoop doet.",
+
+    avDescription:
+      "Realtime antivirusbescherming voor je apparaten tegen malware, phishing en andere online bedreigingen.",
+
+    avPeriod:
+      "eerste jaar*",
+
+    avSaving:
+      "Bespaar $80",
+
+    avButton:
+      "Bekijk TotalAV-aanbieding →",
+
+    vpnDescription:
+      "VPN-privacy en versleuteld browsen om je internetverbinding te helpen beschermen.",
+
+    vpnPeriod:
+      "introductieaanbieding",
+
+    vpnSaving:
+      "Bespaar 80%",
+
+    vpnButton:
+      "Bekijk Total VPN-aanbieding →",
+
+    benefitTitle:
+      "Wat wil je beschermen?",
+
+    benefitDescription:
+      "Antivirus en VPN bieden verschillende vormen van beveiliging en privacy.",
+
+    benefit1Title:
+      "Bescherming tegen malware",
+
+    benefit1Text:
+      "Antivirussoftware kan malware en andere bedreigingen detecteren en helpen verwijderen.",
+
+    benefit2Title:
+      "Online privacy",
+
+    benefit2Text:
+      "Een VPN kan je verbinding versleutelen en tijdens het browsen een andere virtuele locatie bieden.",
+
+    benefit3Title:
+      "Veiliger browsen",
+
+    benefit3Text:
+      "Beveiligingstools kunnen helpen bepaalde online bedreigingen en phishingpogingen te herkennen of blokkeren.",
+
+    benefit4Title:
+      "Meerdere apparaten",
+
+    benefit4Text:
+      "TotalAV ondersteunt Windows-, Mac-, Android- en iOS-apparaten.",
+
+    reviewTitle:
+      "Klantfeedback",
+
+    reviewDescription:
+      "Voorbeelden van klantreacties die op de TotalAV-website zijn gepubliceerd.",
+
+    faqTitle:
+      "Veelgestelde vragen",
+
+    faq1Question:
+      "Wat is het verschil tussen antivirus en een VPN?",
+
+    faq1Answer:
+      "Antivirussoftware beschermt voornamelijk tegen malware en andere bedreigingen. Een VPN richt zich op het versleutelen van je internetverbinding en privacy tijdens het browsen.",
+
+    faq2Question:
+      "Is TotalAV beschikbaar op mobiele apparaten?",
+
+    faq2Answer:
+      "TotalAV ondersteunt Windows, Mac, Android en iOS.",
+
+    faq3Question:
+      "Is de korting van $80 permanent?",
+
+    faq3Answer:
+      "Promotieprijzen kunnen veranderen. Controleer de actuele aanbieding voordat je koopt.",
+
+    faq4Question:
+      "Wordt het abonnement automatisch verlengd?",
+
+    faq4Answer:
+      "Promotionele abonnementen kunnen na de introductieperiode automatisch worden verlengd tegen het toepasselijke reguliere tarief.",
+
+    faq5Question:
+      "Koop ik rechtstreeks via deze website?",
+
+    faq5Answer:
+      "Nee. Deze pagina biedt informatie en links naar de aanbiedingspagina's van de provider.",
+
+    aboutTitle:
+      "Over deze pagina",
+
+    about1:
+      "Deze website is een onafhankelijke informatie- en vergelijkingspagina. Het is niet de officiële website van TotalAV of Total VPN.",
+
+    about2:
+      "Sommige links op deze pagina zijn affiliate-links. De websitebeheerder kan een commissie ontvangen wanneer je via deze links een aankoop doet.",
+
+    about3:
+      "Prijzen, kortingen, functies en voorwaarden kunnen veranderen. Controleer de definitieve voorwaarden bij de provider voordat je koopt.",
+
+    about4:
+      "De informatie over de aanbiedingen is gecontroleerd in september 2026."
+
+  },
+
+
+  tr: {
+
+    topbar:
+      "Bağımsız güvenlik karşılaştırması · Teklifler ve kullanılabilirlik bölgeye göre değişebilir",
+
+    nav:
+      "Antivirüs ve VPN karşılaştırması",
+
+    eyebrow:
+      "DİJİTAL GÜVENLİK VE GİZLİLİK",
+
+    heroTitle:
+      "Dijital hayatınızı koruyun",
+
+    heroDescription:
+      "TotalAV antivirüs ve VPN seçeneklerini karşılaştırın ve ihtiyaçlarınıza uygun çözümü seçin.",
+
+    disclosure:
+      "Bu sayfadaki bağlantılar üzerinden satın alma yaparsanız komisyon alabiliriz.",
+
+    avDescription:
+      "Cihazlarınız için kötü amaçlı yazılımlara, kimlik avına ve diğer çevrimiçi tehditlere karşı gerçek zamanlı antivirüs koruması.",
+
+    avPeriod:
+      "ilk yıl*",
+
+    avSaving:
+      "$80 tasarruf",
+
+    avButton:
+      "TotalAV teklifini görüntüle →",
+
+    vpnDescription:
+      "İnternet bağlantınızı korumaya yardımcı olmak için VPN gizliliği ve şifreli gezinme.",
+
+    vpnPeriod:
+      "tanıtım teklifi",
+
+    vpnSaving:
+      "%80 tasarruf",
+
+    vpnButton:
+      "Total VPN teklifini görüntüle →",
+
+    benefitTitle:
+      "Neyi korumak istiyorsunuz?",
+
+    benefitDescription:
+      "Antivirüs ve VPN farklı güvenlik ve gizlilik ihtiyaçlarını karşılar.",
+
+    benefit1Title:
+      "Kötü amaçlı yazılım koruması",
+
+    benefit1Text:
+      "Antivirüs yazılımı kötü amaçlı yazılımları ve diğer tehditleri tespit etmeye ve kaldırmaya yardımcı olabilir.",
+
+    benefit2Title:
+      "Çevrimiçi gizlilik",
+
+    benefit2Text:
+      "VPN bağlantınızı şifreleyebilir ve gezinirken farklı bir sanal konum sağlayabilir.",
+
+    benefit3Title:
+      "Daha güvenli gezinme",
+
+    benefit3Text:
+      "Güvenlik araçları bazı çevrimiçi tehditleri ve kimlik avı girişimlerini belirlemeye veya engellemeye yardımcı olabilir.",
+
+    benefit4Title:
+      "Birden fazla cihaz",
+
+    benefit4Text:
+      "TotalAV Windows, Mac, Android ve iOS cihazları destekler.",
+
+    reviewTitle:
+      "Müşteri geri bildirimleri",
+
+    reviewDescription:
+      "TotalAV web sitesinde yayınlanan müşteri yorumlarından örnekler.",
+
+    faqTitle:
+      "Sık sorulan sorular",
+
+    faq1Question:
+      "Antivirüs ile VPN arasındaki fark nedir?",
+
+    faq1Answer:
+      "Antivirüs yazılımı temel olarak kötü amaçlı yazılımlara ve diğer tehditlere karşı koruma sağlar. VPN ise internet bağlantınızı şifrelemeye ve gizliliğinizi korumaya odaklanır.",
+
+    faq2Question:
+      "TotalAV mobil cihazlarda kullanılabilir mi?",
+
+    faq2Answer:
+      "TotalAV Windows, Mac, Android ve iOS desteği sunar.",
+
+    faq3Question:
+      "$80 TotalAV indirimi kalıcı mı?",
+
+    faq3Answer:
+      "Promosyon fiyatları değişebilir. Satın almadan önce sağlayıcının güncel teklifini kontrol edin.",
+
+    faq4Question:
+      "Abonelik otomatik olarak yenilenir mi?",
+
+    faq4Answer:
+      "Promosyon abonelikleri ilk dönemden sonra geçerli normal ücret üzerinden otomatik olarak yenilenebilir.",
+
+    faq5Question:
+      "Satın alma işlemini doğrudan bu web sitesinden mi yapıyorum?",
+
+    faq5Answer:
+      "Hayır. Bu sayfa bilgi ve sağlayıcının teklif sayfalarına bağlantılar sunar.",
+
+    aboutTitle:
+      "Bu sayfa hakkında",
+
+    about1:
+      "Bu web sitesi bağımsız bir bilgi ve karşılaştırma sayfasıdır. TotalAV veya Total VPN'in resmi web sitesi değildir.",
+
+    about2:
+      "Bu sayfadaki bazı bağlantılar affiliate bağlantılarıdır. Bu bağlantılardan satın alma yapmanız durumunda site işletmecisi komisyon alabilir.",
+
+    about3:
+      "Fiyatlar, indirimler, özellikler ve koşullar değişebilir. Satın almadan önce sağlayıcının güncel koşullarını kontrol edin.",
+
+    about4:
+      "Teklif bilgileri Eylül 2026'da kontrol edilmiştir."
+
+  }
+
+};
+
+
+
+/*
+====================================================
+APPLY TRANSLATION
+====================================================
+*/
+
+function setText(id, value) {
+
+  const element = document.getElementById(id);
+
+  if (element && value) {
+    element.textContent = value;
+  }
+
+}
+
+
+function applyLanguage(lang) {
+
+  const t = translations[lang] || translations.en;
+
+  document.documentElement.lang = lang;
+
+  document.title =
+    lang === "en"
+      ? "TotalAV & Total VPN — Security & Privacy Offers"
+      : "TotalAV & Total VPN — Security & Privacy";
+
+
+  Object.keys(t).forEach(function(key) {
+
+    const element = document.getElementById(key);
+
+    if (element && t[key]) {
+      element.textContent = t[key];
+    }
+
+  });
+
+
+  /*
+  Special IDs where the translation key
+  doesn't exactly match the HTML ID.
+  */
+
+  setText("navNote", t.nav);
+
+  setText("topbar", t.topbar);
+
+  setText("eyebrow", t.eyebrow);
+
+  setText("heroTitle", t.heroTitle);
+
+  setText("heroDescription", t.heroDescription);
+
+  setText("heroDisclosure", t.disclosure);
+
+  setText("avDescription", t.avDescription);
+
+  setText("avPeriod", t.avPeriod);
+
+  setText("avSaving", t.avSaving);
+
+  setText("avFeature1", t.avFeature1);
+
+  setText("avFeature2", t.avFeature2);
+
+  setText("avFeature3", t.avFeature3);
+
+  setText("avFeature4", t.avFeature4);
+
+  setText("avFeature5", t.avFeature5);
+
+  setText("avFeature6", t.avFeature6);
+
+  setText("avButton", t.avButton);
+
+  setText("avRenewal", t.avRenewal);
+
+  setText("vpnDescription", t.vpnDescription);
+
+  setText("vpnPeriod", t.vpnPeriod);
+
+  setText("vpnSaving", t.vpnSaving);
+
+  setText("vpnFeature1", t.vpnFeature1);
+
+  setText("vpnFeature2", t.vpnFeature2);
+
+  setText("vpnFeature3", t.vpnFeature3);
+
+  setText("vpnFeature4", t.vpnFeature4);
+
+  setText("vpnFeature5", t.vpnFeature5);
+
+  setText("vpnFeature6", t.vpnFeature6);
+
+  setText("vpnButton", t.vpnButton);
+
+  setText("vpnRenewal", t.vpnRenewal);
+
+  setText("benefitTitle", t.benefitTitle);
+
+  setText("benefitDescription", t.benefitDescription);
+
+  setText("benefit1Title", t.benefit1Title);
+
+  setText("benefit1Text", t.benefit1Text);
+
+  setText("benefit2Title", t.benefit2Title);
+
+  setText("benefit2Text", t.benefit2Text);
+
+  setText("benefit3Title", t.benefit3Title);
+
+  setText("benefit3Text", t.benefit3Text);
+
+  setText("benefit4Title", t.benefit4Title);
+
+  setText("benefit4Text", t.benefit4Text);
+
+  setText("reviewTitle", t.reviewTitle);
+
+  setText("reviewDescription", t.reviewDescription);
+
+  setText("reviewSource1", t.reviewSource);
+
+  setText("reviewSource2", t.reviewSource);
+
+  setText("reviewSource3", t.reviewSource);
+
+  setText("faqTitle", t.faqTitle);
+
+  setText("faq1Question", t.faq1Question);
+
+  setText("faq1Answer", t.faq1Answer);
+
+  setText("faq2Question", t.faq2Question);
+
+  setText("faq2Answer", t.faq2Answer);
+
+  setText("faq3Question", t.faq3Question);
+
+  setText("faq3Answer", t.faq3Answer);
+
+  setText("faq4Question", t.faq4Question);
+
+  setText("faq4Answer", t.faq4Answer);
+
+  setText("faq5Question", t.faq5Question);
+
+  setText("faq5Answer", t.faq5Answer);
+
+  setText("aboutTitle", t.aboutTitle);
+
+  setText("about1", t.about1);
+
+  setText("about2", t.about2);
+
+  setText("about3", t.about3);
+
+  setText("about4", t.about4);
+
+}
+
+
+/*
+====================================================
+DETECT VISITOR LANGUAGE
+====================================================
+*/
+
+function detectLanguage() {
+
+  const browserLanguages =
+    navigator.languages ||
+    [navigator.language || "en"];
+
+  for (const language of browserLanguages) {
+
+    const shortLanguage =
+      language.toLowerCase().split("-")[0];
+
+    if (translations[shortLanguage]) {
+      return shortLanguage;
+    }
+
+  }
+
+  return "en";
+
+}
+
+
+const visitorLanguage = detectLanguage();
+
+applyLanguage(visitorLanguage);
+
+</script>
+
 
 </body>
 </html>
